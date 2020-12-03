@@ -1,139 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/styles/jqx.base.css">
-        <link rel="stylesheet" type="text/css" href="css/styles/jqx.darkblue.css">
-        <link rel="stylesheet" type="text/css" href="css/app.css?v=1.18">
-        <title>Beyond to Fantasy Grounds Character Interchange</title>
-    </head>
-    <body class="default">
-      <div class="container">
-        <div id="header">
-          D&amp;D Beyond to Fantasy Grounds Character Converter
-        </div>
-        Select FG Version: <div id="verButtonC">Classic</div><div id="verButtonU">Unity</div>
-        <pre>
-Log in to your <a href="https://www.dndbeyond.com/my-characters" target="_blank">D&amp;D Beyond Account</a>.
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Beyond to Fantasy Grounds character translator</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample06" aria-controls="navbarsExample06" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample06">
+        <ul class="navbar-nav mr-auto justify-content-end">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <!--
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown06" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown06">
+              <a class="dropdown-item" href="#">Action</a>
+              <a clas"="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          -->
+        </ul>
+        <!--
+        <form class="form-inline my-2 my-md-0">
+          <input class="form-control" type="text" placeholder="Search">
+        </form>
+        -->      
+        <a class="navbar-brand" href="#">D&D Beyond to Fantasy Grounds Character Converter</a>
+
+      </div>
+    </nav>
+
+
+  <!-- Page Content -->
+  <div class="container text-dark">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="root" class="mt-5">D&D Beyond character transfer</h1>
+        <p class="lead">Easily tranfer characters created at D&amp;D Beyond to Fantasy Grounds.</p>
+      </div>
+      <div class="col-lg-12 text-left">
+        <p >Log in to your <a href="https://www.dndbeyond.com/my-characters" target="_blank">D&amp;D Beyond Account</a>.
 Mouse over 'Collections' on the navigation bar and select 'My Characters'.
 View the character you want to convert. In the address bar, it should look something like:
-https://www.dndbeyond.com/profile/YourUserName/characters/<b>8675309</b>
-
-Note the character ID. In the above example it's <b>8675309</b>.
-Paste this into the 'Character ID' box below and click 'Get Character Data'.
-After a moment, while the character is processed, the XML will populate.
-Click 'Download XML' to save the character to your computer.</pre>
-For instructions on how to import the XML file into Fantasy Grounds,
-please watch <a href="https://www.youtube.com/watch?v=Rzd6zPxClFY">
-<b>this video</b></a> by Digital Dungeon Master.<br /><br />
-        <b>Character ID:&nbsp;&nbsp;<input type="text" id="getcharID">&nbsp;&nbsp;<button id="grabChar">Get Character Data</button></b><br />
-        <br />
-        <textarea id="textHere"></textarea><br />
-        <button id="dlChar">Download XML</button>&nbsp;&nbsp;<button id="resetChar">Reset ALL</button><br /><br />
-
-      <div id="displayLinks">
-        <div style="width: 100%; height: 650px; margin-top: 50px;" id="dispLinkContainer">
-            <div id="Linkwindow">
-                <div id="LinkwindowHeader">
-                    <span>
-                        External Links
-                    </span>
-                </div>
-                <div style="overflow: hidden;" id="LinkwindowContent">
-                                      <div>
-                                        &nbsp;&nbsp;&nbsp;<a href="http://www.fantasygrounds.com" target="_blank">Fantasy Grounds VTT</a><br />
-                                        &nbsp;&nbsp;&nbsp;<a href="https://discord.gg/VKbhkSt" target="_blank">Fantasy Grounds Discord server</a><br />
-                                        &nbsp;&nbsp;&nbsp;<a href="https://fantasygroundscollege.net/" target="_blank">Fantasy Grounds College (FGC)</a><br />
-                                        &nbsp;&nbsp;&nbsp;<a href="https://discordapp.com/invite/Ew6nYyw" target="_blank">FGC Discord server</a>
-                                      </div>
-                                    </div>
-                                </div>
-
-        </div>
+https://www.dndbeyond.com/profile/YourUserName/characters/<b>8675309</b></p>
+        <p>Note the character ID. In the above example it's <b>8675309</b>.
+        Paste this into the 'Character ID' box below and select the format you want. After a moment, the XML will populate.</p>
       </div>
-
-      <div id="displayCL">
-        <div style="width: 100%; height: 650px; margin-top: 50px;" id="changelogContainer">
-            <div id="CLwindow">
-                <div id="CLwindowHeader">
-                    <span>
-                        Changelog
-                    </span>
-                </div>
-                <div style="overflow: hidden;" id="CLwindowContent">
-                  <div>
-                    <p>20200207-1: <br />
-                      &nbsp;&nbsp;&nbsp;Added ammo to ranged weapons.
-                    </p>
-                    <p>20200211-1: <br />
-                      &nbsp;&nbsp;&nbsp;Coded for Medium Armor Master
-                    </p>
-                    <p>20200212-1: <br />
-                      &nbsp;&nbsp;&nbsp;Fixed initiative for Alert feat & Jack of all Trades
-                    </p>
-                    <p>20200212-2: <br />
-                      &nbsp;&nbsp;&nbsp;Validated initiative and passive perception.
-                    </p>
-                    <p>20200329-1: <br />
-                      &nbsp;&nbsp;&nbsp;Fixed notes, added Spy background
-                    </p>
-                    <p>20200304-1: <br />
-                      &nbsp;&nbsp;&nbsp;Fixed dashes for FG Classic.
-                    </p>
-                    <p>20200305-1: <br />
-                      &nbsp;&nbsp;&nbsp;Updated code to account for manual HP entry
-                    </p>
-                    <p>20200405-1: <br />
-                      &nbsp;&nbsp;&nbsp;Fixed spell slots for multi-class spell casters
-                    </p>
-                  </div>
-                </div>
-            </div>
+      <div class="col-lg-12 text-center">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Character ID</span>
+          </div>
+          <textarea id="charID" class="form-control" aria-label="With textarea"></textarea>
         </div>
-      </div>
+        <br/>
+        <div class="dropdown" id="exportCharType">
 
-      <div id="displayDon">
-        <div style="width: 100%; height: 650px; margin-top: 50px;" id="donateContainer">
-            <div id="DONwindow">
-                <div id="DONwindowHeader">
-                    <span>
-                        Donations
-                    </span>
-                </div>
-                <div style="overflow: hidden;" id="DONwindowContent">
-                  <div>
-                    <p>If you want to donate:<br />
-Please consider becoming a <a href="https://www.patreon.com/FGC" target="_blank">Patreon of FGC.</a><br />
-This project would never have started were it not for them. <br />They do great work.
-                    </p>
-                  </div>
-                </div>
-            </div>
         </div>
+        <br>
+        <br>
+        <form>
+          <div class="form-group">
+            <label for="characterXMLData">Character XML</label>
+            <textarea class="form-control" id="characterXMLData" rows="8"></textarea>
+          </div>
+        </form>
+        <button type="button" class="btn btn-outline-secondary">Download Character</button>
+    </div>
+      <br>
+      <div class="col-lg-12 text-left">
+        <p>Click 'Download Character' to save the character to your computer.</p>
+        <p>For instructions on how to import the XML file into Fantasy Grounds, please watch <a href="https://www.youtube.com/watch?v=Rzd6zPxClFY"><b>this video</b></a> by Digital Dungeon Master.<br /><br /></p>
       </div>
     </div>
-      <footer>
-        &nbsp
-    </footer>
-    </body>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous">
-    </script>
-    <script src="js/jqxcore.js"></script>
-    <script src="js/jqxbuttons.js"></script>
-    <script src="js/jqxinput.js"></script>
-    <script src="js/jqxtextarea.js"></script>
-    <script src="js/jqxwindow.js"></script>
-    <script src="js/jqxscrollbar.js"></script>
-    <script src="js/jqxmenu.js"></script>
-    <script src="js/jqxdropdownlist.js"></script>
-    <script src="js/jqxlistbox.js"></script>
-    <script src="js/jqxradiobutton.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
-    <script src="js/app.js?v=1.18"></script>
+  <br/>
+  <br/>
+  <div class="row">
+      <a id="about"></a>
+      <div class="col-lg-12 text-center">
+        <h1>About</h1>
+        <p>If you came here by accident, this is what it's all about</p>
+        <p>D&amp;D Beyond</p>
+        <p>Fantasy Grounds</p>
+        <p>The Developers</p>
+      </div>
+    </div>
+    <div class="row">
+      <a id="contact"></a>
+      <div class="col-lg-12 text-center">
+        <h1>Contact</h1>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container bg-dark text-white">
+      <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+  </footer>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="scripts/app.js"></script>
+
+</body>
+
 </html>
